@@ -7,8 +7,6 @@ import unittest
 # HINT: You will have to add https://en.wikipedia.org to the URL retrieved using BeautifulSoup
 def getLink(soup):
     url = 'https://en.wikipedia.org/wiki/List_of_American_universities_with_Olympic_medals'
-    r = requests.get(url)
-    soup = BeautifulSoup(r.content, 'html.parser')
 
     pass
 
@@ -24,7 +22,9 @@ def main():
     # Task 1: Create a BeautifulSoup object and name it soup. Refer to discussion slides or lecture slides to complete this
 
     #### YOUR CODE HERE####
-
+    r = requests.get(url)
+    soup = BeautifulSoup(r.content, 'html.parser')
+    
     #Call the functions getLink(soup) and getAdmissionsInfo2019(soup) on your soup object.
     getLink(soup)
     getAdmissionsInfo2019(soup)
