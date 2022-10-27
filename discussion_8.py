@@ -6,7 +6,8 @@ import unittest
 # search for the url in the University of Michgian wikipedia page (in the third pargraph of the intro)
 # HINT: You will have to add https://en.wikipedia.org to the URL retrieved using BeautifulSoup
 def getLink(soup):
-    url = 'https://en.wikipedia.org/wiki/List_of_American_universities_with_Olympic_medals'
+    unis = soup.find('a', href = 'https://en.wikipedia.org/wiki/List_of_American_universities_with_Olympic_medals')
+    return 'https://en.wikipedia.org' + unis.get('href')
 
     pass
 
